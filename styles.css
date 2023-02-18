@@ -3,60 +3,55 @@ body {
   padding: 0;
   background-color: #333; /* Light mode background color */
   color: #f8f8f8; /* Light mode text color */
+  font-family: 'Open Sans', sans-serif;
 }
 
 .portfolio-item-container {
   width: 100%;
-  overflow: hidden;
   height: 200px;
-  margin: 0 auto;
-}
-
-.portfolio-item-container img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.portfolio-item-container:hover img{
-  transform: scale(1.1);
-  opacity: 0.8;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.portfolio-item-container:hover:after{
-  background-color: rgba(0,0,0,0.5);
-  height: 100%;
-  width: 100%;
-}
-
-.portfolio-item-container > div{
   position: relative;
+  overflow: hidden;
 }
 
-.portfolio-item-container > div:hover:after{
+.portfolio-item-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.3s ease-in-out;
+  margin-top: -100px;
+}
+
+.portfolio-item-container:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-item-container .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  margin: auto;
-  background-color: rgba(0,0,0,0.5);
-  color: #fff;
-  text-align: center;
-  padding-top: 80px;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.pacman:hover:after{
-  content: "This is pacman!";
+.portfolio-item-container:hover .overlay {
+  opacity: 1;
 }
 
-.container {
-  max-width: 800px; /* Adjust as needed */
-  margin: 0 auto;
-  padding: 20px;
+.portfolio-item-container .overlay h1,
+.portfolio-item-container .overlay p {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 10% 10px;
 }
+
 
 /* input[type="checkbox"] {
   display: none;
