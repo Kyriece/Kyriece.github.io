@@ -1,45 +1,59 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fff; /* Light mode background color */
-  color: #000; /* Light mode text color */
+  background-color: #333; /* Light mode background color */
+  color: #f8f8f8; /* Light mode text color */
+  font-family: 'Open Sans', sans-serif;
 }
 
-.bg-image {
-  background-image: url('pics/pacman.png');
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
-  height: 200px; /* Adjust height as needed */
+.portfolio-item-container {
   width: 100%;
-  transition: transform 0.3s ease-in-out;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
 }
 
-.bg-image:hover {
+.portfolio-item-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.3s ease-in-out;
+  margin-top: -100px;
+}
+
+.portfolio-item-container:hover img {
   transform: scale(1.1);
 }
 
-.bg-image:hover:after {
-  content: "Hello World";
-  display: block;
+.portfolio-item-container .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  color: #fff;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding-top: 40px;
 }
 
-.container {
-  max-width: 800px; /* Adjust as needed */
-  margin: 0 auto;
-  padding: 20px;
+.portfolio-item-container:hover .overlay {
+  opacity: 1;
 }
 
-input[type="checkbox"] {
+.portfolio-item-container .overlay h1,
+.portfolio-item-container .overlay p {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 10% 10px;
+}
+
+
+/* input[type="checkbox"] {
   display: none;
   padding: 20px;
 }
@@ -74,4 +88,4 @@ label[for="dark-mode-toggle"] {
 #dark-mode-toggle:checked + label .toggle {
   left: calc(50% - 2px);
   background-color: #333;
-}
+} */
