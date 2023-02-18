@@ -1,36 +1,55 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fff; /* Light mode background color */
-  color: #000; /* Light mode text color */
+  background-color: #333; /* Light mode background color */
+  color: #f8f8f8; /* Light mode text color */
 }
 
-.bg-image {
-  background-image: url('pics/pacman.png');
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
-  height: 200px; /* Adjust height as needed */
+.portfolio-item-container {
   width: 100%;
-  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  height: 200px;
+  margin: 0 auto;
 }
 
-.bg-image:hover {
+.portfolio-item-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.portfolio-item-container:hover img{
   transform: scale(1.1);
+  opacity: 0.8;
+  background-color: rgba(0,0,0,0.5);
 }
 
-.bg-image:hover:after {
-  content: "Hello World";
-  display: block;
+.portfolio-item-container:hover:after{
+  background-color: rgba(0,0,0,0.5);
+  height: 100%;
+  width: 100%;
+}
+
+.portfolio-item-container > div{
+  position: relative;
+}
+
+.portfolio-item-container > div:hover:after{
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  margin: auto;
   background-color: rgba(0,0,0,0.5);
   color: #fff;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 80px;
+  height: 100%;
+  width: 100%;
+}
+
+.pacman:hover:after{
+  content: "This is pacman!";
 }
 
 .container {
@@ -39,7 +58,7 @@ body {
   padding: 20px;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   display: none;
   padding: 20px;
 }
@@ -74,4 +93,4 @@ label[for="dark-mode-toggle"] {
 #dark-mode-toggle:checked + label .toggle {
   left: calc(50% - 2px);
   background-color: #333;
-}
+} */
