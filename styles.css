@@ -65,7 +65,6 @@ li {
   opacity: 0;
   background: linear-gradient(135deg, #1a1a1a 25%, #333 25%, #1a1a1a 75%, #333 75%);
   background-size: 50px 50px;
-  border: none;
   border-radius: 10px;
   box-shadow: 0 0 10px 1px gold;
   display: flex;
@@ -112,7 +111,7 @@ li {
   border: 7px solid black;
   border-radius: 20px;
   box-shadow: 0 0 5px 0px #DCB02E;
-  margin-bottom: 10vh;
+  margin-bottom: 18vh;
 }
 
 .portfolio-item-container img {
